@@ -29,20 +29,114 @@
             <p id="currentDay" class="lead"></p>
         </header>
         <div class="container">
+            <!-- 9AM -->
             <div class="row">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour">9 AM</p>
-                <input class="col-lg-10 col-md-10 col-xs-5 future" type="textarea" />
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="nineAM">9</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row1" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
+                ></i>
+            </div>
+            <!-- 10AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="tenAM">10</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row2" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
+                ></i>
+            </div>
+            <!-- 11AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">11 PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row3" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
+                ></i>
+            </div>
+            <!-- 12PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">12 PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row4" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
+                ></i>
+            </div>
+            <!-- 1PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">1 PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row5" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
+                ></i>
+            </div>
+            <!-- 2PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">2 PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row6" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
+                ></i>
+            </div>
+            <!-- 3PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">3 PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row7" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
+                ></i>
+            </div>
+            <!-- 4PM -->
+            <div class="row mb-1">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">4 PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row8" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
                 ></i>
             </div>
         </div>
+        <footer class="text-center">Have a great day!</footer>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script>
             console.log(moment().format("MMM Do YYYY"));
             $("#currentDay").text(moment().format("MMM Do YYYY"));
+
+            var row1 = $("#row1");
+            var row2 = $("#row2");
+            var row3 = $("#row3");
+            var row4 = $("#row4");
+            var row5 = $("#row5");
+            var row6 = $("#row6");
+            var row7 = $("#row7");
+            var row8 = $("#row8");
+            // Creating Time variable
+            var time = moment().format("HH");
+            var timeUse = parseInt(time);
+            // Creating 9AM Variable
+            var nineam = $("#nineAM").text();
+            var nineam1 = parseInt(nineam);
+
+
+            function nineam() {
+                if (nineam1 < timeUse) {
+                    row1.addClass("past");
+                } else if (nineam1 > timeUse) {
+                    row1.addCLass("future");
+                } else {
+                    row.addCLass("present");
+                }
+            }
+
+            function nineam() {
+                if (nineam1 < timeUse) {
+                    row1.addClass("past");
+                } else if (nineam1 > timeUse) {
+                    row1.addCLass("future");
+                } else {
+                    row.addCLass("present");
+                }
+            }
         </script>
     </body>
 </html>
