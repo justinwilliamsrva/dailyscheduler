@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Work Day Scheduler</title>
+    </head>
+
+    <body>
+        <header class="jumbotron">
+            <h1 class="display-3">Work Day Scheduler</h1>
+            <p class="lead">A simple calendar app for scheduling your work day</p>
+            <p id="currentDay" class="lead"></p>
+        </header>
+
+        <!-- Clear Button -->
+        <a href="halfhour.html">half hour</a>
+        <div class="container mb-3" id="clear">
+            <button value="clear" class="clearBtn">Clear Schedule</button>
+        </div>
+        <div class="container mb-3">
+            <!-- 9AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="nineAM">9</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row1" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save1"
+                ></i>
+            </div>
+            <!-- 10AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="tenAM">10</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row2" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save2"
+                ></i>
+            </div>
+            <!-- 11AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="elevenAM">11</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row3" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save3"
+                ></i>
+            </div>
+            <!-- 12PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="twelvePM">12</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row4" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save4"
+                ></i>
+            </div>
+            <!-- 1PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="onePM">1</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row5" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save5"
+                ></i>
+            </div>
+            <!-- 2PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="twoPM">2</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row6" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save6"
+                ></i>
+            </div>
+            <!-- 3PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="threePM">3</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row7" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save7"
+                ></i>
+            </div>
+            <!-- 4PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="fourPM">4</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row8" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save8"
+                ></i>
+            </div>
+        </div>
+
+        <!-- Clear Button -->
+        <div class="container mb-5" id="clear">
+            <button value="clear" class="clearBtn">Clear Schedule</button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script>
+            // Clear Schedule
+            $(".clearBtn").on("click", function () {
+                localStorage.setItem("save1", "");
+                saveLocal1 = localStorage.getItem("save1");
+                $("#row1").val(saveLocal1);
+
+                localStorage.setItem("save2", "");
+                saveLocal2 = localStorage.getItem("save2");
+                $("#row2").val(saveLocal2);
+
+                localStorage.setItem("save3", "");
+                saveLocal3 = localStorage.getItem("save3");
+                $("#row3").val(saveLocal3);
+
+                localStorage.setItem("save4", "");
+                saveLocal4 = localStorage.getItem("save4");
+                $("#row4").val(saveLocal4);
+
+                localStorage.setItem("save5", "");
+                saveLocal5 = localStorage.getItem("save5");
+                $("#row5").val(saveLocal5);
+
+                localStorage.setItem("save6", "");
+                saveLocal6 = localStorage.getItem("save6");
+                $("#row6").val(saveLocal6);
+
+                localStorage.setItem("save7", "");
+                saveLocal7 = localStorage.getItem("save7");
+                $("#row7").val(saveLocal7);
+
+                localStorage.setItem("save8", "");
+                saveLocal8 = localStorage.getItem("save8");
+                $("#row8").val(saveLocal8);
+            });
+
+            console.log(moment().format("MMM Do YYYY"));
+            $("#currentDay").text(moment().format("MMM Do YYYY"));
+
+            var row1 = $("#row1");
+            var row2 = $("#row2");
+            var row3 = $("#row3");
+            var row4 = $("#row4");
+            var row5 = $("#row5");
+            var row6 = $("#row6");
+            var row7 = $("#row7");
+            var row8 = $("#row8");
+
+            // Creating Time variable
+            var time = moment().format("HH");
+            console.log(time);
+            var time1 = moment().format("mm");
+            console.log(time1);
+            var timeUse = parseInt(time);
+            var timeUse1 = parseInt(time1);
+            console.log(timeUse1);
+            // Creating 9AM Variable
+            var nineam = $("#nineAM").text();
+            var nineam1 = parseInt(nineam);
+            // Creating 10AM Variable
+            var tenam = $("#tenAM").text();
+            var tenam1 = parseInt(tenam);
+            // Creating 11AM Variable
+            var elevenam = $("#elevenAM").text();
+            var elevenam1 = parseInt(elevenam);
+            // Creating 12PM Variable
+            var twelvepm = $("#twelvePM").text();
+            var twelvepm1 = parseInt(twelvepm);
+
+            // Creating 1PM Variable
+            var onepm = $("#onePM").text();
+            var onepm1 = parseInt(onepm);
+            onepm1 = onepm1 + 12;
+
+            // Creating 2PM Variable
+            var twopm = $("#twoPM").text();
+            var twopm1 = parseInt(twopm);
+            twopm1 = twopm1 + 12;
+            // Creating 3PM Variable
+            var threepm = $("#threePM").text();
+            var threepm1 = parseInt(threepm);
+            threepm1 = threepm1 + 12;
+            // Creating 4PM Variable
+            var fourpm = $("#fourPM").text();
+            var fourpm1 = parseInt(fourpm);
+            fourpm1 = fourpm1 + 12;
+
+            function nine() {
+                if (nineam1 < timeUse) {
+                    row1.addClass("past");
+                } else if (nineam1 > timeUse) {
+                    row1.addClass("future");
+                } else {
+                    row1.addClass("present");
+                }
+            }
+
+            function ten() {
+                if (tenam1 < timeUse) {
+                    row2.addClass("past");
+                } else if (tenam1 > timeUse) {
+                    row2.addClass("future");
+                } else {
+                    row2.addClass("present");
+                }
+            }
+            function eleven() {
+                if (elevenam1 < timeUse) {
+                    row3.addClass("past");
+                } else if (elevenam1 > timeUse) {
+                    row3.addClass("future");
+                } else {
+                    row3.addClass("present");
+                }
+            }
+
+            function twelve() {
+                if (twelvepm1 < timeUse) {
+                    row4.addClass("past");
+                } else if (twelvepm1 > timeUse) {
+                    row4.addClass("future");
+                } else {
+                    row4.addClass("present");
+                }
+            }
+
+            function one() {
+                if (onepm1 < timeUse) {
+                    row5.addClass("past");
+                } else if (onepm1 > timeUse) {
+                    row5.addClass("future");
+                } else {
+                    row5.addClass("present");
+                }
+            }
+
+            function two() {
+                if (twopm1 < timeUse) {
+                    row6.addClass("past");
+                } else if (twopm1 > timeUse) {
+                    row6.addClass("future");
+                } else {
+                    row6.addClass("present");
+                }
+            }
+
+            function three() {
+                if (threepm1 < timeUse) {
+                    row7.addClass("past");
+                } else if (threepm1 > timeUse) {
+                    row7.addClass("future");
+                } else {
+                    row7.addClass("present");
+                }
+            }
+
+            function three() {
+                if (threepm1 < timeUse) {
+                    row7.addClass("past");
+                } else if (threepm1 > timeUse) {
+                    row7.addClass("future");
+                } else {
+                    row7.addClass("present");
+                }
+            }
+
+            function four() {
+                if (fourpm1 < timeUse) {
+                    row8.addClass("past");
+                } else if (fourpm1 > timeUse) {
+                    row8.addClass("future");
+                } else {
+                    row8.addClass("present");
+                }
+            }
+            // Load Saves
+            saveLocal1 = localStorage.getItem("save1");
+            $("#row1").val(saveLocal1);
+            saveLocal2 = localStorage.getItem("save2");
+            $("#row2").val(saveLocal2);
+            saveLocal3 = localStorage.getItem("save3");
+            $("#row3").val(saveLocal3);
+            saveLocal4 = localStorage.getItem("save4");
+            $("#row4").val(saveLocal4);
+            saveLocal5 = localStorage.getItem("save5");
+            $("#row5").val(saveLocal5);
+            saveLocal6 = localStorage.getItem("save6");
+            $("#row6").val(saveLocal6);
+            saveLocal7 = localStorage.getItem("save7");
+            $("#row7").val(saveLocal7);
+            saveLocal8 = localStorage.getItem("save8");
+            $("#row8").val(saveLocal8);
+
+            // Functions
+            nine();
+            ten();
+            eleven();
+            twelve();
+            one();
+            two();
+            three();
+            four();
+
+            //Save Button
+            $("#save1").on("click", function () {
+                var save1 = document.getElementById("row1").value;
+                localStorage.setItem("save1", save1);
+
+                $("#save1").css({ "background-color": "black" });
+            });
+
+            $("#save2").on("click", function () {
+                var save2 = document.getElementById("row2").value;
+                localStorage.setItem("save2", save2);
+                $("#save2").css({ "background-color": "black" });
+            });
+
+            $("#save3").on("click", function () {
+                var save3 = document.getElementById("row3").value;
+                localStorage.setItem("save3", save3);
+                $("#save3").css({ "background-color": "black" });
+            });
+
+            $("#save4").on("click", function () {
+                var save4 = document.getElementById("row4").value;
+                localStorage.setItem("save4", save4);
+                $("#save4").css({ "background-color": "black" });
+            });
+
+            $("#save5").on("click", function () {
+                var save5 = document.getElementById("row5").value;
+                localStorage.setItem("save5", save5);
+                $("#save5").css({ "background-color": "black" });
+            });
+
+            $("#save6").on("click", function () {
+                var save6 = document.getElementById("row6").value;
+                localStorage.setItem("save6", save6);
+                $("#save6").css({ "background-color": "black" });
+            });
+            $("#save7").on("click", function () {
+                var save7 = document.getElementById("row7").value;
+                localStorage.setItem("save7", save7);
+                $("#save7").css({ "background-color": "black" });
+            });
+            $("#save8").on("click", function () {
+                var save8 = document.getElementById("row8").value;
+                localStorage.setItem("save8", save8);
+                $("#save8").css({ "background-color": "black" });
+            });
+        </script>
+    </body>
+</html>

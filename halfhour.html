@@ -18,7 +18,7 @@
             href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="halfhour.css" />
         <title>Work Day Scheduler</title>
     </head>
 
@@ -28,6 +28,7 @@
             <p class="lead">A simple calendar app for scheduling your work day</p>
             <p id="currentDay" class="lead"></p>
         </header>
+        <a href="hour.html"> hour</a>
         <div class="container mb-3" id="clear">
             <button value="clear" class="clearBtn">Clear Schedule</button>
         </div>
@@ -41,12 +42,21 @@
                     id="save1"
                 ></i>
             </div>
+            <!-- 9:30AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">9:<span id="ninethirty">30</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row15" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save1"
+                ></i>
+            </div>
             <!-- 10AM -->
             <div class="row">
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="tenAM">10</span>AM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row2" type="textarea" />
                 <i
-                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom "
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save2"
                 ></i>
             </div>
@@ -55,8 +65,19 @@
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="elevenAM">11</span>AM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row3" type="textarea" />
                 <i
-                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom "
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save3"
+                ></i>
+            </div>
+            <!-- 11:30AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">
+                    11:<span id="eleventhirty">30</span>AM
+                </p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row35" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save1"
                 ></i>
             </div>
             <!-- 12PM -->
@@ -64,7 +85,7 @@
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="twelvePM">12</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row4" type="textarea" />
                 <i
-                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom "
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save4"
                 ></i>
             </div>
@@ -73,7 +94,7 @@
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="onePM">1</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row5" type="textarea" />
                 <i
-                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom "
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save5"
                 ></i>
             </div>
@@ -82,7 +103,7 @@
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="twoPM">2</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row6" type="textarea" />
                 <i
-                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom "
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save6"
                 ></i>
             </div>
@@ -91,7 +112,7 @@
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="threePM">3</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row7" type="textarea" />
                 <i
-                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom "
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save7"
                 ></i>
             </div>
@@ -100,7 +121,7 @@
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="fourPM">4</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row8" type="textarea" />
                 <i
-                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom "
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save8"
                 ></i>
             </div>
@@ -153,8 +174,10 @@
             $("#currentDay").text(moment().format("MMM Do YYYY"));
 
             var row1 = $("#row1");
+            var row15 = $("#row15");
             var row2 = $("#row2");
             var row3 = $("#row3");
+            var row35 = $("#row35");
             var row4 = $("#row4");
             var row5 = $("#row5");
             var row6 = $("#row6");
@@ -163,18 +186,27 @@
 
             // Creating Time variable
             var time = moment().format("HH");
+            console.log(time);
+            var time1 = moment().format("mm");
+            console.log(time1);
             var timeUse = parseInt(time);
+            var timeUse1 = parseInt(time1);
+            console.log(timeUse1);
             // Creating 9AM Variable
             var nineam = $("#nineAM").text();
             var nineam1 = parseInt(nineam);
-            console.log(nineam1);
+            // Creating 930AM Variable
+            var ninethirty = $("#ninethirty").text();
+            var ninethirty1 = parseInt(ninethirty);
             // Creating 10AM Variable
             var tenam = $("#tenAM").text();
             var tenam1 = parseInt(tenam);
-            console.log(tenam1);
             // Creating 11AM Variable
             var elevenam = $("#elevenAM").text();
             var elevenam1 = parseInt(elevenam);
+            // Creating 1130AM Variable
+            var eleventhirty = $("#eleventhirty").text();
+            var eleventhirty1 = parseInt(eleventhirty);
             // Creating 12PM Variable
             var twelvepm = $("#twelvePM").text();
             var twelvepm1 = parseInt(twelvepm);
@@ -206,6 +238,15 @@
                     row1.addClass("present");
                 }
             }
+            function ninethirtyfun() {
+                if (nineam1 < timeUse) {
+                    row15.addClass("past");
+                } else if ((nineam1 = timeUse && ninethirty1 > timeUse1)) {
+                    row15.addClass("future");
+                } else {
+                    row15.addClass("present");
+                }
+            }
 
             function ten() {
                 if (tenam1 < timeUse) {
@@ -223,6 +264,16 @@
                     row3.addClass("future");
                 } else {
                     row3.addClass("present");
+                }
+            }
+
+            function eleventhirtyfun() {
+                if (elevenam1 < timeUse) {
+                    row35.addClass("past");
+                } else if ((elevenam1 = timeUse && eleventhirty1 > timeUse1)) {
+                    row35.addClass("future");
+                } else {
+                    row35.addClass("present");
                 }
             }
 
@@ -305,8 +356,10 @@
 
             // Functions
             nine();
+            ninethirtyfun();
             ten();
             eleven();
+            eleventhirtyfun();
             twelve();
             one();
             two();
