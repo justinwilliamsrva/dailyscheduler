@@ -28,7 +28,12 @@
             <p class="lead">A simple calendar app for scheduling your work day</p>
             <p id="currentDay" class="lead"></p>
         </header>
-        <a href="hour.html"> hour</a>
+        <!-- Link to Half Hour -->
+        <a href="hour.html" class="btn btn-primary mb-3" role="button" aria-pressed="true"
+            >Hourly Schedule</a
+        >
+
+        <!-- Clear Schedule -->
         <div class="container mb-3" id="clear">
             <button value="clear" class="clearBtn">Clear Schedule</button>
         </div>
@@ -48,7 +53,7 @@
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row15" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
-                    id="save1"
+                    id="save15"
                 ></i>
             </div>
             <!-- 10AM -->
@@ -58,6 +63,15 @@
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save2"
+                ></i>
+            </div>
+            <!-- 10:30AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">10:<span id="tenthirty">30</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row25" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save25"
                 ></i>
             </div>
             <!-- 11AM -->
@@ -77,7 +91,7 @@
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row35" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
-                    id="save1"
+                    id="save35"
                 ></i>
             </div>
             <!-- 12PM -->
@@ -89,6 +103,17 @@
                     id="save4"
                 ></i>
             </div>
+            <!-- 12:30AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">
+                    12:<span id="twelvethirty">30</span>PM
+                </p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row45" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save45"
+                ></i>
+            </div>
             <!-- 1PM -->
             <div class="row">
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="onePM">1</span>PM</p>
@@ -96,6 +121,15 @@
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save5"
+                ></i>
+            </div>
+            <!-- 1:30AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">1:<span id="onethirty">30</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row55" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save55"
                 ></i>
             </div>
             <!-- 2PM -->
@@ -107,6 +141,15 @@
                     id="save6"
                 ></i>
             </div>
+            <!-- 2:30PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">2:<span id="twothirty">30</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row65" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save65"
+                ></i>
+            </div>
             <!-- 3PM -->
             <div class="row">
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="threePM">3</span>PM</p>
@@ -116,6 +159,15 @@
                     id="save7"
                 ></i>
             </div>
+            <!-- 3:30PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">3:<span id="threethirty">30</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row75" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save75"
+                ></i>
+            </div>
             <!-- 4PM -->
             <div class="row">
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="fourPM">4</span>PM</p>
@@ -123,6 +175,15 @@
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
                     id="save8"
+                ></i>
+            </div>
+            <!-- 4:30PM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour">4:<span id="fourthirty">30</span>PM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5" id="row85" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="save85"
                 ></i>
             </div>
         </div>
@@ -141,33 +202,65 @@
                 saveLocal1 = localStorage.getItem("save1");
                 $("#row1").val(saveLocal1);
 
+                localStorage.setItem("save15", "");
+                saveLocal15 = localStorage.getItem("save15");
+                $("#row15").val(saveLocal15);
+
                 localStorage.setItem("save2", "");
                 saveLocal2 = localStorage.getItem("save2");
                 $("#row2").val(saveLocal2);
+
+                localStorage.setItem("save25", "");
+                saveLocal25 = localStorage.getItem("save25");
+                $("#row25").val(saveLocal25);
 
                 localStorage.setItem("save3", "");
                 saveLocal3 = localStorage.getItem("save3");
                 $("#row3").val(saveLocal3);
 
+                localStorage.setItem("save35", "");
+                saveLocal35 = localStorage.getItem("save35");
+                $("#row35").val(saveLocal35);
+
                 localStorage.setItem("save4", "");
                 saveLocal4 = localStorage.getItem("save4");
                 $("#row4").val(saveLocal4);
+
+                localStorage.setItem("save45", "");
+                saveLocal45 = localStorage.getItem("save45");
+                $("#row45").val(saveLocal45);
 
                 localStorage.setItem("save5", "");
                 saveLocal5 = localStorage.getItem("save5");
                 $("#row5").val(saveLocal5);
 
+                localStorage.setItem("save55", "");
+                saveLocal55 = localStorage.getItem("save55");
+                $("#row55").val(saveLocal55);
+
                 localStorage.setItem("save6", "");
                 saveLocal6 = localStorage.getItem("save6");
                 $("#row6").val(saveLocal6);
+
+                localStorage.setItem("save65", "");
+                saveLocal65 = localStorage.getItem("save65");
+                $("#row65").val(saveLocal65);
 
                 localStorage.setItem("save7", "");
                 saveLocal7 = localStorage.getItem("save7");
                 $("#row7").val(saveLocal7);
 
+                localStorage.setItem("save75", "");
+                saveLocal75 = localStorage.getItem("save75");
+                $("#row75").val(saveLocal75);
+
                 localStorage.setItem("save8", "");
                 saveLocal8 = localStorage.getItem("save8");
                 $("#row8").val(saveLocal8);
+
+                localStorage.setItem("save85", "");
+                saveLocal85 = localStorage.getItem("save85");
+                $("#row85").val(saveLocal85);
             });
 
             console.log(moment().format("MMM Do YYYY"));
@@ -176,13 +269,19 @@
             var row1 = $("#row1");
             var row15 = $("#row15");
             var row2 = $("#row2");
+            var row25 = $("#row25");
             var row3 = $("#row3");
             var row35 = $("#row35");
             var row4 = $("#row4");
+            var row45 = $("#row45");
             var row5 = $("#row5");
+            var row55 = $("#row55");
             var row6 = $("#row6");
+            var row65 = $("#row65");
             var row7 = $("#row7");
+            var row75 = $("#row75");
             var row8 = $("#row8");
+            var row85 = $("#row85");
 
             // Creating Time variable
             var time = moment().format("HH");
@@ -201,36 +300,53 @@
             // Creating 10AM Variable
             var tenam = $("#tenAM").text();
             var tenam1 = parseInt(tenam);
+            // Creating 1030AM Variable
+            var tenthirty = $("#tenthirty").text();
+            var tenthirty1 = parseInt(tenthirty);
             // Creating 11AM Variable
             var elevenam = $("#elevenAM").text();
             var elevenam1 = parseInt(elevenam);
+            console.log(elevenam1);
             // Creating 1130AM Variable
             var eleventhirty = $("#eleventhirty").text();
             var eleventhirty1 = parseInt(eleventhirty);
             // Creating 12PM Variable
             var twelvepm = $("#twelvePM").text();
             var twelvepm1 = parseInt(twelvepm);
+            var twelvethirty = $("#twelvethirty").text();
+            var twelvethirty1 = parseInt(twelvethirty);
 
             // Creating 1PM Variable
             var onepm = $("#onePM").text();
             var onepm1 = parseInt(onepm);
             onepm1 = onepm1 + 12;
+            var onethirty = $("#onethirty").text();
+            var onethirty1 = parseInt(onethirty);
 
             // Creating 2PM Variable
             var twopm = $("#twoPM").text();
             var twopm1 = parseInt(twopm);
             twopm1 = twopm1 + 12;
+            var twothirty = $("#twothirty").text();
+            var twothirty1 = parseInt(twothirty);
             // Creating 3PM Variable
             var threepm = $("#threePM").text();
             var threepm1 = parseInt(threepm);
             threepm1 = threepm1 + 12;
+            var threethirty = $("#threethirty").text();
+            var threethirty1 = parseInt(threethirty);
             // Creating 4PM Variable
             var fourpm = $("#fourPM").text();
             var fourpm1 = parseInt(fourpm);
             fourpm1 = fourpm1 + 12;
+            var fourthirty = $("#fourthirty").text();
+            var fourthirty1 = parseInt(fourthirty);
 
+            // Creating Funtions
             function nine() {
                 if (nineam1 < timeUse) {
+                    row1.addClass("past");
+                } else if (nineam1 == timeUse && ninethirty1 <= timeUse1) {
                     row1.addClass("past");
                 } else if (nineam1 > timeUse) {
                     row1.addClass("future");
@@ -251,14 +367,28 @@
             function ten() {
                 if (tenam1 < timeUse) {
                     row2.addClass("past");
+                } else if (tenam1 == timeUse && tenthirty1 <= timeUse1) {
+                    row2.addClass("past");
                 } else if (tenam1 > timeUse) {
                     row2.addClass("future");
                 } else {
                     row2.addClass("present");
                 }
             }
+
+            function tenthirtyfun() {
+                if (tenam1 < timeUse) {
+                    row25.addClass("past");
+                } else if ((tenam1 = timeUse && tenthirty1 > timeUse1)) {
+                    row25.addClass("future");
+                } else {
+                    row35.addClass("present");
+                }
+            }
             function eleven() {
                 if (elevenam1 < timeUse) {
+                    row3.addClass("past");
+                } else if (elevenam1 == timeUse && eleventhirty1 <= timeUse1) {
                     row3.addClass("past");
                 } else if (elevenam1 > timeUse) {
                     row3.addClass("future");
@@ -280,6 +410,8 @@
             function twelve() {
                 if (twelvepm1 < timeUse) {
                     row4.addClass("past");
+                } else if (twelvepm1 == timeUse && twelvethirty1 <= timeUse1) {
+                    row4.addClass("past");
                 } else if (twelvepm1 > timeUse) {
                     row4.addClass("future");
                 } else {
@@ -287,8 +419,20 @@
                 }
             }
 
+            function twelvethirtyfun() {
+                if (twelvepm1 < timeUse) {
+                    row45.addClass("past");
+                } else if ((twelvepm1 = timeUse && twelvethirty1 > timeUse1)) {
+                    row45.addClass("future");
+                } else {
+                    row45.addClass("present");
+                }
+            }
+
             function one() {
                 if (onepm1 < timeUse) {
+                    row5.addClass("past");
+                } else if (onepm1 == timeUse && onethirty1 <= timeUse1) {
                     row5.addClass("past");
                 } else if (onepm1 > timeUse) {
                     row5.addClass("future");
@@ -297,8 +441,20 @@
                 }
             }
 
+            function onethirtyfun() {
+                if (onepm1 < timeUse) {
+                    row55.addClass("past");
+                } else if (onepm1 == timeUse && onethirty1 > timeUse1) {
+                    row55.addClass("future");
+                } else {
+                    row55.addClass("present");
+                }
+            }
+
             function two() {
                 if (twopm1 < timeUse) {
+                    row6.addClass("past");
+                } else if (twopm1 == timeUse && twothirty1 <= timeUse1) {
                     row6.addClass("past");
                 } else if (twopm1 > timeUse) {
                     row6.addClass("future");
@@ -306,9 +462,19 @@
                     row6.addClass("present");
                 }
             }
-
+            function twothirtyfun() {
+                if (twopm1 < timeUse) {
+                    row65.addClass("past");
+                } else if ((twopm1 = timeUse && twothirty1 > timeUse1)) {
+                    row65.addClass("future");
+                } else {
+                    row65.addClass("present");
+                }
+            }
             function three() {
                 if (threepm1 < timeUse) {
+                    row7.addClass("past");
+                } else if (threepm1 == timeUse && threethirty1 <= timeUse1) {
                     row7.addClass("past");
                 } else if (threepm1 > timeUse) {
                     row7.addClass("future");
@@ -316,19 +482,20 @@
                     row7.addClass("present");
                 }
             }
-
-            function three() {
+            function threethirtyfun() {
                 if (threepm1 < timeUse) {
-                    row7.addClass("past");
-                } else if (threepm1 > timeUse) {
-                    row7.addClass("future");
+                    row75.addClass("past");
+                } else if ((threepm1 = timeUse && threethirty1 > timeUse1)) {
+                    row75.addClass("future");
                 } else {
-                    row7.addClass("present");
+                    row75.addClass("present");
                 }
             }
 
             function four() {
                 if (fourpm1 < timeUse) {
+                    row8.addClass("past");
+                } else if (fourpm1 == timeUse && fourthirty1 <= timeUse1) {
                     row8.addClass("past");
                 } else if (fourpm1 > timeUse) {
                     row8.addClass("future");
@@ -336,35 +503,67 @@
                     row8.addClass("present");
                 }
             }
+
+            function fourthirtyfun() {
+                if (fourpm1 < timeUse) {
+                    row85.addClass("past");
+                } else if ((fourpm1 = timeUse && fourthirty1 > timeUse1)) {
+                    row85.addClass("future");
+                } else {
+                    row85.addClass("present");
+                }
+            }
             // Load Saves
             saveLocal1 = localStorage.getItem("save1");
             $("#row1").val(saveLocal1);
+            saveLocal15 = localStorage.getItem("save15");
+            $("#row15").val(saveLocal15);
             saveLocal2 = localStorage.getItem("save2");
             $("#row2").val(saveLocal2);
+            saveLocal25 = localStorage.getItem("save25");
+            $("#row25").val(saveLocal25);
             saveLocal3 = localStorage.getItem("save3");
             $("#row3").val(saveLocal3);
+            saveLocal35 = localStorage.getItem("save35");
+            $("#row35").val(saveLocal35);
             saveLocal4 = localStorage.getItem("save4");
             $("#row4").val(saveLocal4);
+            saveLocal45 = localStorage.getItem("save45");
+            $("#row45").val(saveLocal45);
             saveLocal5 = localStorage.getItem("save5");
             $("#row5").val(saveLocal5);
+            saveLocal55 = localStorage.getItem("save55");
+            $("#row55").val(saveLocal55);
             saveLocal6 = localStorage.getItem("save6");
             $("#row6").val(saveLocal6);
+            saveLocal65 = localStorage.getItem("save65");
+            $("#row65").val(saveLocal65);
             saveLocal7 = localStorage.getItem("save7");
             $("#row7").val(saveLocal7);
+            saveLocal75 = localStorage.getItem("save75");
+            $("#row75").val(saveLocal75);
             saveLocal8 = localStorage.getItem("save8");
             $("#row8").val(saveLocal8);
+            saveLocal85 = localStorage.getItem("save85");
+            $("#row85").val(saveLocal85);
 
             // Functions
             nine();
             ninethirtyfun();
             ten();
+            tenthirtyfun();
             eleven();
             eleventhirtyfun();
             twelve();
+            twelvethirtyfun();
             one();
+            onethirtyfun();
             two();
+            twothirtyfun();
             three();
+            threethirtyfun();
             four();
+            fourthirtyfun();
 
             //Save Button
             $("#save1").on("click", function () {
@@ -374,10 +573,23 @@
                 $("#save1").css({ "background-color": "black" });
             });
 
+            $("#save15").on("click", function () {
+                var save15 = document.getElementById("row15").value;
+                localStorage.setItem("save15", save15);
+
+                $("#save15").css({ "background-color": "black" });
+            });
+
             $("#save2").on("click", function () {
                 var save2 = document.getElementById("row2").value;
                 localStorage.setItem("save2", save2);
                 $("#save2").css({ "background-color": "black" });
+            });
+
+            $("#save25").on("click", function () {
+                var save25 = document.getElementById("row25").value;
+                localStorage.setItem("save25", save25);
+                $("#save25").css({ "background-color": "black" });
             });
 
             $("#save3").on("click", function () {
@@ -386,10 +598,22 @@
                 $("#save3").css({ "background-color": "black" });
             });
 
+            $("#save35").on("click", function () {
+                var save35 = document.getElementById("row35").value;
+                localStorage.setItem("save35", save35);
+                $("#save35").css({ "background-color": "black" });
+            });
+
             $("#save4").on("click", function () {
                 var save4 = document.getElementById("row4").value;
                 localStorage.setItem("save4", save4);
                 $("#save4").css({ "background-color": "black" });
+            });
+            $("#save45").on("click", function () {
+                var save45 = document.getElementById("row45").value;
+                localStorage.setItem("save45", save15);
+
+                $("#save45").css({ "background-color": "black" });
             });
 
             $("#save5").on("click", function () {
@@ -397,21 +621,45 @@
                 localStorage.setItem("save5", save5);
                 $("#save5").css({ "background-color": "black" });
             });
+            $("#save55").on("click", function () {
+                var save55 = document.getElementById("row55").value;
+                localStorage.setItem("save55", save15);
+
+                $("#save55").css({ "background-color": "black" });
+            });
 
             $("#save6").on("click", function () {
                 var save6 = document.getElementById("row6").value;
                 localStorage.setItem("save6", save6);
                 $("#save6").css({ "background-color": "black" });
             });
+            $("#save65").on("click", function () {
+                var save65 = document.getElementById("row65").value;
+                localStorage.setItem("save65", save65);
+
+                $("#save65").css({ "background-color": "black" });
+            });
             $("#save7").on("click", function () {
                 var save7 = document.getElementById("row7").value;
                 localStorage.setItem("save7", save7);
                 $("#save7").css({ "background-color": "black" });
             });
+            $("#save75").on("click", function () {
+                var save75 = document.getElementById("row75").value;
+                localStorage.setItem("save75", save15);
+
+                $("#save75").css({ "background-color": "black" });
+            });
             $("#save8").on("click", function () {
                 var save8 = document.getElementById("row8").value;
                 localStorage.setItem("save8", save8);
                 $("#save8").css({ "background-color": "black" });
+            });
+            $("#save85").on("click", function () {
+                var save85 = document.getElementById("row85").value;
+                localStorage.setItem("save85", save85);
+
+                $("#save85").css({ "background-color": "black" });
             });
         </script>
     </body>
