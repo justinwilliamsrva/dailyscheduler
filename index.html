@@ -28,7 +28,7 @@
             <p class="lead">A simple calendar app for scheduling your work day</p>
             <p id="currentDay" class="lead"></p>
         </header>
-        <div class="container">
+        <div class="container mb-3">
             <!-- 9AM -->
             <div class="row">
                 <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="nineAM">9</span>AM</p>
@@ -39,7 +39,7 @@
             </div>
             <!-- 10AM -->
             <div class="row">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="tenAM">10</span>PM</p>
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="tenAM">10</span>AM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row2" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
@@ -47,7 +47,7 @@
             </div>
             <!-- 11AM -->
             <div class="row">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour">11 PM</p>
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="elevenAM">11</span> AM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row3" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
@@ -55,7 +55,7 @@
             </div>
             <!-- 12PM -->
             <div class="row">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour">12 PM</p>
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="twelvePM">12</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row4" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
@@ -63,7 +63,7 @@
             </div>
             <!-- 1PM -->
             <div class="row">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour">1 PM</p>
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="onePM">1</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row5" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
@@ -71,7 +71,7 @@
             </div>
             <!-- 2PM -->
             <div class="row">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour">2 PM</p>
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="twoPM">2</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row6" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
@@ -79,22 +79,23 @@
             </div>
             <!-- 3PM -->
             <div class="row">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour">3 PM</p>
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="threePM">3</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row7" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
                 ></i>
             </div>
             <!-- 4PM -->
-            <div class="row mb-1">
-                <p class="col-lg-1 col-md-1 col-xs-1 hour">4 PM</p>
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 hour"><span id="fourPM">4</span>PM</p>
                 <input class="col-lg-10 col-md-10 col-xs-5" id="row8" type="textarea" />
                 <i
                     class="col-lg-1 col-md-1 col-xs-1 saveBtn fa fa-bookmark icon text-center align-bottom pt-4"
                 ></i>
             </div>
         </div>
-        <footer class="text-center">Have a great day!</footer>
+        <!-- Footer -->
+        <footer class="text-center bt-1"><h2>Have a great day!</h2></footer>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -116,27 +117,123 @@
             // Creating 9AM Variable
             var nineam = $("#nineAM").text();
             var nineam1 = parseInt(nineam);
+            console.log(nineam1);
+            // Creating 10AM Variable
+            var tenam = $("#tenAM").text();
+            var tenam1 = parseInt(tenam);
+            // Creating 11AM Variable
+            var elevenam = $("#elevenAM").text();
+            var elevenam1 = parseInt(elevenam);
+            // Creating 12PM Variable
+            var twelvepm = $("#twelvePM").text();
+            var twelvepm1 = parseInt(twelvepm);
 
+            // Creating 1PM Variable
+            var onepm = $("#onePM").text();
+            var onepm1 = parseInt(onepm);
+            onepm1 = onepm1 + 12;
 
-            function nineam() {
+            // Creating 2PM Variable
+            var twopm = $("#twoPM").text();
+            var twopm1 = parseInt(twopm);
+            twopm1 = twopm1 + 12;
+            // Creating 3PM Variable
+            var threepm = $("#threePM").text();
+            var threepm1 = parseInt(threepm);
+            threepm1 = threepm1 + 12;
+            // Creating 4PM Variable
+            var fourpm = $("#fourPM").text();
+            var fourpm1 = parseInt(fourpm);
+            fourpm1 = fourpm1 + 12;
+
+            function nine() {
                 if (nineam1 < timeUse) {
                     row1.addClass("past");
                 } else if (nineam1 > timeUse) {
-                    row1.addCLass("future");
+                    row1.addClass("future");
                 } else {
-                    row.addCLass("present");
+                    row1.addClass("present");
                 }
             }
 
-            function nineam() {
-                if (nineam1 < timeUse) {
-                    row1.addClass("past");
-                } else if (nineam1 > timeUse) {
-                    row1.addCLass("future");
+            function ten() {
+                if (tenam1 < timeUse) {
+                    row2.addClass("past");
+                } else if (tenam1 > timeUse) {
+                    row2.addCLass("future");
                 } else {
-                    row.addCLass("present");
+                    row2.addCLass("present");
                 }
             }
+
+            function eleven() {
+                if (elevenam1 < timeUse) {
+                    row3.addClass("past");
+                } else if (eleven1 > timeUse) {
+                    row3.addCLass("future");
+                } else {
+                    row3.addCLass("present");
+                }
+            }
+
+            function twelve() {
+                if (twelvepm1 < timeUse) {
+                    row4.addClass("past");
+                } else if (twelvepm1 > timeUse) {
+                    row4.addCLass("future");
+                } else {
+                    row4.addCLass("present");
+                }
+            }
+
+            function one() {
+                if (onepm1 < timeUse) {
+                    row5.addClass("past");
+                } else if (onepm1 > timeUse) {
+                    row5.addCLass("future");
+                } else {
+                    row5.addCLass("present");
+                }
+            }
+
+            function two() {
+                if (twopm1 < timeUse) {
+                    row6.addClass("past");
+                } else if (twopm1 > timeUse) {
+                    row6.addCLass("future");
+                } else {
+                    row6.addCLass("present");
+                }
+            }
+
+            function three() {
+                if (threepm1 < timeUse) {
+                    row7.addClass("past");
+                } else if (threepm1 > timeUse) {
+                    row7.addCLass("future");
+                } else {
+                    row7.addCLass("present");
+                }
+            }
+
+            function four() {
+                if (fourpm1 < timeUse) {
+                    row8.addClass("past");
+                } else if (fourpm1 > timeUse) {
+                    row8.addCLass("future");
+                } else {
+                    row8.addCLass("present");
+                }
+            }
+
+            nine();
+            ten();
+            eleven();
+            twelve();
+            one();
+            two();
+            three();
+            four();
         </script>
     </body>
 </html>
