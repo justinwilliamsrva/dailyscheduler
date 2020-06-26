@@ -357,7 +357,9 @@
             function ninethirtyfun() {
                 if (nineam1 < timeUse) {
                     row15.addClass("past");
-                } else if ((nineam1 = timeUse && ninethirty1 > timeUse1)) {
+                } else if (nineam1 == timeUse && ninethirty1 > timeUse1) {
+                    row15.addClass("future");
+                } else if (nineam1 > timeUse) {
                     row15.addClass("future");
                 } else {
                     row15.addClass("present");
@@ -379,10 +381,12 @@
             function tenthirtyfun() {
                 if (tenam1 < timeUse) {
                     row25.addClass("past");
-                } else if ((tenam1 = timeUse && tenthirty1 > timeUse1)) {
+                } else if (tenam1 == timeUse && tenthirty1 > timeUse1) {
+                    row25.addClass("future");
+                } else if (tenam1 > timeUse) {
                     row25.addClass("future");
                 } else {
-                    row35.addClass("present");
+                    row25.addClass("present");
                 }
             }
             function eleven() {
@@ -400,7 +404,9 @@
             function eleventhirtyfun() {
                 if (elevenam1 < timeUse) {
                     row35.addClass("past");
-                } else if ((elevenam1 = timeUse && eleventhirty1 > timeUse1)) {
+                } else if (elevenam1 == timeUse && eleventhirty1 > timeUse1) {
+                    row35.addClass("future");
+                } else if (elevenam1 > timeUse) {
                     row35.addClass("future");
                 } else {
                     row35.addClass("present");
@@ -422,7 +428,9 @@
             function twelvethirtyfun() {
                 if (twelvepm1 < timeUse) {
                     row45.addClass("past");
-                } else if ((twelvepm1 = timeUse && twelvethirty1 > timeUse1)) {
+                } else if (twelvepm1 == timeUse && twelvethirty1 > timeUse1) {
+                    row45.addClass("future");
+                } else if (twelvepm1 > timeUse) {
                     row45.addClass("future");
                 } else {
                     row45.addClass("present");
@@ -446,6 +454,8 @@
                     row55.addClass("past");
                 } else if (onepm1 == timeUse && onethirty1 > timeUse1) {
                     row55.addClass("future");
+                } else if (onepm1 > timeUse) {
+                    row55.addClass("future");
                 } else {
                     row55.addClass("present");
                 }
@@ -461,11 +471,17 @@
                 } else {
                     row6.addClass("present");
                 }
+                console.log(twopm1);
+                console.log(timeUse);
+                console.log(twothirty1);
+                console.log(timeUse1);
             }
             function twothirtyfun() {
                 if (twopm1 < timeUse) {
                     row65.addClass("past");
-                } else if ((twopm1 = timeUse && twothirty1 > timeUse1)) {
+                } else if (twopm1 == timeUse && twothirty1 > timeUse1) {
+                    row65.addClass("future");
+                } else if (twopm1 > timeUse) {
                     row65.addClass("future");
                 } else {
                     row65.addClass("present");
@@ -485,7 +501,9 @@
             function threethirtyfun() {
                 if (threepm1 < timeUse) {
                     row75.addClass("past");
-                } else if ((threepm1 = timeUse && threethirty1 > timeUse1)) {
+                } else if (threepm1 == timeUse && threethirty1 > timeUse1) {
+                    row75.addClass("future");
+                } else if (threepm1 > timeUse) {
                     row75.addClass("future");
                 } else {
                     row75.addClass("present");
@@ -507,7 +525,9 @@
             function fourthirtyfun() {
                 if (fourpm1 < timeUse) {
                     row85.addClass("past");
-                } else if ((fourpm1 = timeUse && fourthirty1 > timeUse1)) {
+                } else if (fourpm1 == timeUse && fourthirty1 > timeUse1) {
+                    row85.addClass("future");
+                } else if (fourpm1 > timeUse) {
                     row85.addClass("future");
                 } else {
                     row85.addClass("present");
