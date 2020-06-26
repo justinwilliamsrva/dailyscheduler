@@ -28,6 +28,9 @@
             <p class="lead">A simple calendar app for scheduling your work day</p>
             <p id="currentDay" class="lead"></p>
         </header>
+        <div class="container mb-5" id="clear">
+            <button value="clear" id="clearBtn">Clear Schedule</button>
+        </div>
         <div class="container mb-3">
             <!-- 9AM -->
             <div class="row">
@@ -102,8 +105,11 @@
                 ></i>
             </div>
         </div>
-        <!-- Footer -->
-        <footer class="text-center bt-1"><h2>Have a great day!</h2></footer>
+
+        <!-- Clear Button -->
+        <div class="container mb-5" id="clear">
+            <button value="clear" id="clearBtn">Clear Schedule</button>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -130,6 +136,7 @@
             // Creating 10AM Variable
             var tenam = $("#tenAM").text();
             var tenam1 = parseInt(tenam);
+            console.log(tenam1);
             // Creating 11AM Variable
             var elevenam = $("#elevenAM").text();
             var elevenam1 = parseInt(elevenam);
@@ -169,19 +176,18 @@
                 if (tenam1 < timeUse) {
                     row2.addClass("past");
                 } else if (tenam1 > timeUse) {
-                    row2.addCLass("future");
+                    row2.addClass("future");
                 } else {
-                    row2.addCLass("present");
+                    row2.addClass("present");
                 }
             }
-
             function eleven() {
                 if (elevenam1 < timeUse) {
                     row3.addClass("past");
-                } else if (eleven1 > timeUse) {
-                    row3.addCLass("future");
+                } else if (elevenam1 > timeUse) {
+                    row3.addClass("future");
                 } else {
-                    row3.addCLass("present");
+                    row3.addClass("present");
                 }
             }
 
@@ -189,9 +195,9 @@
                 if (twelvepm1 < timeUse) {
                     row4.addClass("past");
                 } else if (twelvepm1 > timeUse) {
-                    row4.addCLass("future");
+                    row4.addClass("future");
                 } else {
-                    row4.addCLass("present");
+                    row4.addClass("present");
                 }
             }
 
@@ -199,9 +205,9 @@
                 if (onepm1 < timeUse) {
                     row5.addClass("past");
                 } else if (onepm1 > timeUse) {
-                    row5.addCLass("future");
+                    row5.addClass("future");
                 } else {
-                    row5.addCLass("present");
+                    row5.addClass("present");
                 }
             }
 
@@ -209,9 +215,9 @@
                 if (twopm1 < timeUse) {
                     row6.addClass("past");
                 } else if (twopm1 > timeUse) {
-                    row6.addCLass("future");
+                    row6.addClass("future");
                 } else {
-                    row6.addCLass("present");
+                    row6.addClass("present");
                 }
             }
 
@@ -219,9 +225,19 @@
                 if (threepm1 < timeUse) {
                     row7.addClass("past");
                 } else if (threepm1 > timeUse) {
-                    row7.addCLass("future");
+                    row7.addClass("future");
                 } else {
-                    row7.addCLass("present");
+                    row7.addClass("present");
+                }
+            }
+
+            function three() {
+                if (threepm1 < timeUse) {
+                    row7.addClass("past");
+                } else if (threepm1 > timeUse) {
+                    row7.addClass("future");
+                } else {
+                    row7.addClass("present");
                 }
             }
 
@@ -229,9 +245,9 @@
                 if (fourpm1 < timeUse) {
                     row8.addClass("past");
                 } else if (fourpm1 > timeUse) {
-                    row8.addCLass("future");
+                    row8.addClass("future");
                 } else {
-                    row8.addCLass("present");
+                    row8.addClass("present");
                 }
             }
             // Load Saves
@@ -308,6 +324,11 @@
                 localStorage.setItem("save8", save8);
                 $("#save8").css({ "background-color": "black" });
             });
+
+
+
+            // Clear Schedule
+            
         </script>
     </body>
 </html>

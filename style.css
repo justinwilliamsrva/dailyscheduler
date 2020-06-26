@@ -81,3 +81,7 @@ textarea {
 i {
     cursor: pointer;
 }
+#clear {
+    display: flex;
+    justify-content: center;
+}
