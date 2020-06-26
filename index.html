@@ -29,7 +29,7 @@
             <p id="currentDay" class="lead"></p>
         </header>
         <div class="container mb-5" id="clear">
-            <button value="clear" id="clearBtn">Clear Schedule</button>
+            <button value="clear" class="clearBtn">Clear Schedule</button>
         </div>
         <div class="container mb-3">
             <!-- 9AM -->
@@ -108,12 +108,47 @@
 
         <!-- Clear Button -->
         <div class="container mb-5" id="clear">
-            <button value="clear" id="clearBtn">Clear Schedule</button>
+            <button value="clear" class="clearBtn">Clear Schedule</button>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script>
+            // Clear Schedule
+            $(".clearBtn").on("click", function () {
+                localStorage.setItem("save1", "");
+                saveLocal1 = localStorage.getItem("save1");
+                $("#row1").val(saveLocal1);
+
+                localStorage.setItem("save2", "");
+                saveLocal2 = localStorage.getItem("save2");
+                $("#row2").val(saveLocal2);
+
+                localStorage.setItem("save3", "");
+                saveLocal3 = localStorage.getItem("save3");
+                $("#row3").val(saveLocal3);
+
+                localStorage.setItem("save4", "");
+                saveLocal4 = localStorage.getItem("save4");
+                $("#row4").val(saveLocal4);
+
+                localStorage.setItem("save5", "");
+                saveLocal5 = localStorage.getItem("save5");
+                $("#row5").val(saveLocal5);
+
+                localStorage.setItem("save6", "");
+                saveLocal6 = localStorage.getItem("save6");
+                $("#row6").val(saveLocal6);
+
+                localStorage.setItem("save7", "");
+                saveLocal7 = localStorage.getItem("save7");
+                $("#row7").val(saveLocal7);
+
+                localStorage.setItem("save8", "");
+                saveLocal8 = localStorage.getItem("save8");
+                $("#row8").val(saveLocal8);
+            });
+
             console.log(moment().format("MMM Do YYYY"));
             $("#currentDay").text(moment().format("MMM Do YYYY"));
 
@@ -282,6 +317,7 @@
             $("#save1").on("click", function () {
                 var save1 = document.getElementById("row1").value;
                 localStorage.setItem("save1", save1);
+
                 $("#save1").css({ "background-color": "black" });
             });
 
@@ -324,11 +360,6 @@
                 localStorage.setItem("save8", save8);
                 $("#save8").css({ "background-color": "black" });
             });
-
-
-
-            // Clear Schedule
-            
         </script>
     </body>
 </html>
