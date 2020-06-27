@@ -1,4 +1,4 @@
-# dailyscheduler
+# Daily Scheduler App
 
 
 # User Story
