@@ -87,3 +87,7 @@ i {
     display: flex;
     justify-content: center;
 }
+
+.hour {
+    font-size: small;
+}
