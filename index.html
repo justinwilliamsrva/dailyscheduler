@@ -38,6 +38,36 @@
             <button value="clear" class="clearBtn">Clear Schedule</button>
         </div>
         <div class="container mb-3">
+            <!-- 6AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 col-2 hour"><span id="sixAM">6</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5 col-8" id="ro1" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 col-2 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="sav1"
+                ></i>
+            </div>
+
+            <!-- 7AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 col-2 hour"><span id="sevenAM">7</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5 col-8" id="ro2" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 col-2 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="sav2"
+                ></i>
+            </div>
+
+            <!-- 8AM -->
+            <div class="row">
+                <p class="col-lg-1 col-md-1 col-xs-1 col-2 hour"><span id="eightAM">8</span>AM</p>
+                <input class="col-lg-10 col-md-10 col-xs-5 col-8" id="ro3" type="textarea" />
+                <i
+                    class="col-lg-1 col-md-1 col-xs-1 col-2 saveBtn fa fa-bookmark icon text-center align-bottom"
+                    id="sav3"
+                ></i>
+            </div>
+
             <!-- 9AM -->
             <div class="row">
                 <p class="col-lg-1 col-md-1 col-xs-1 col-2 hour"><span id="nineAM">9</span>AM</p>
@@ -122,6 +152,18 @@
         <script>
             // Clear Schedule
             $(".clearBtn").on("click", function () {
+                localStorage.setItem("sav1", "");
+                saveLoca1 = localStorage.getItem("sav1");
+                $("#ro1").val(saveLoca1);
+
+                localStorage.setItem("sav2", "");
+                saveLoca2 = localStorage.getItem("sav2");
+                $("#ro2").val(saveLoca2);
+
+                localStorage.setItem("sav3", "");
+                saveLoca3 = localStorage.getItem("sav3");
+                $("#ro3").val(saveLoca3);
+
                 localStorage.setItem("save1", "");
                 saveLocal1 = localStorage.getItem("save1");
                 $("#row1").val(saveLocal1);
@@ -166,6 +208,10 @@
             var row6 = $("#row6");
             var row7 = $("#row7");
             var row8 = $("#row8");
+            var ro1 = $("#ro1");
+            var ro2 = $("#ro2");
+            var ro3 = $("#ro3");
+            console.log(row1);
 
             // Creating Time variable
             var time = moment().format("HH");
@@ -175,6 +221,15 @@
             var timeUse = parseInt(time);
             var timeUse1 = parseInt(time1);
             console.log(timeUse1);
+            // Creating 6AM Variable
+            var sixam = $("#sixAM").text();
+            var sixam1 = parseInt(sixam);
+            // Creating 7AM Variable
+            var sevenam = $("#sevenAM").text();
+            var sevenam1 = parseInt(sevenam);
+            // Creating 8AM Variable
+            var eightam = $("#eightAM").text();
+            var eightam1 = parseInt(eightam);
             // Creating 9AM Variable
             var nineam = $("#nineAM").text();
             var nineam1 = parseInt(nineam);
@@ -213,6 +268,36 @@
                     row1.addClass("future");
                 } else {
                     row1.addClass("present");
+                }
+            }
+
+            function six() {
+                if (sixam1 < timeUse) {
+                    ro1.addClass("past");
+                } else if (sixam1 > timeUse) {
+                    ro1.addClass("future");
+                } else {
+                    ro1.addClass("present");
+                }
+            }
+
+            function seven() {
+                if (sevenam1 < timeUse) {
+                    ro2.addClass("past");
+                } else if (sevenam1 > timeUse) {
+                    ro2.addClass("future");
+                } else {
+                    ro2.addClass("present");
+                }
+            }
+
+            function eight() {
+                if (eightam1 < timeUse) {
+                    ro3.addClass("past");
+                } else if (eightam1 > timeUse) {
+                    ro3.addClass("future");
+                } else {
+                    ro3.addClass("present");
                 }
             }
 
@@ -311,8 +396,17 @@
             $("#row7").val(saveLocal7);
             saveLocal8 = localStorage.getItem("save8");
             $("#row8").val(saveLocal8);
+            saveLoca1 = localStorage.getItem("sav1");
+            ro1.val(saveLoca1);
+            saveLoca2 = localStorage.getItem("sav2");
+            $("#ro2").val(saveLoca2);
+            saveLoca3 = localStorage.getItem("sav3");
+            $("#ro3").val(saveLoca3);
 
             // Functions
+            six();
+            seven();
+            eight();
             nine();
             ten();
             eleven();
@@ -368,6 +462,25 @@
                 var save8 = document.getElementById("row8").value;
                 localStorage.setItem("save8", save8);
                 $("#save8").css({ "background-color": "black" });
+            });
+
+            $("#sav1").on("click", function () {
+                var sav1 = document.getElementById("ro1").value;
+                localStorage.setItem("sav1", sav1);
+
+                $("#sav1").css({ "background-color": "black" });
+            });
+
+            $("#sav2").on("click", function () {
+                var sav2 = document.getElementById("ro2").value;
+                localStorage.setItem("sav2", sav2);
+                $("#sav2").css({ "background-color": "black" });
+            });
+
+            $("#sav3").on("click", function () {
+                var sav3 = document.getElementById("ro3").value;
+                localStorage.setItem("sav3", sav3);
+                $("#sav3").css({ "background-color": "black" });
             });
         </script>
     </body>
